@@ -2,10 +2,10 @@ var target;
 var mouse;
 var mouseimg;
 var targetimg;
-
+var targetimg, mouseimg;
 function preload(){
-  mouseimg=loadImage("reflexoptics.jpg");
-  targetimg=loadImage("target-print-out-1024x1024.jpg")
+  mouseimg=loadImage("image/optics.jpg");
+  targetimg=loadImage("image/target.jpg") ;
 }
 function setup() {
   createCanvas(1800,900);
@@ -17,9 +17,10 @@ function setup() {
   mouse.shapeColor="red";
 
   mouse.addImage(mouseimg);
-  target=loadImage(targetimg);
+  target.addImage(targetimg);
 
- 
+ target.scale=0.3;
+ mouse.scale=0.3;
 }
 
 function draw() {
@@ -28,6 +29,8 @@ function draw() {
 
   textSize(100);
  text("Aim practice",700,300)
+ textSize(50);
+ text("click on the targets",700,500);
 
  mouse.x=World.mouseX;
  mouse.y=World.mouseY;
